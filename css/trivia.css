@@ -90,6 +90,10 @@ body {
     display: none;
 }
 
+.waitingToJoin {
+    display: none;
+}
+
 .points {
     width: 50%;
     text-align: center;

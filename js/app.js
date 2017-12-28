@@ -79,8 +79,11 @@ $(function(){
             var that = this;
             var playerName = this.$input.val();
             $('.join').hide();
+
+            $('.waitingToJoin').show();
             $('.leave').show();
             $('.playerScores').show();
+
 
             this.socket = app.socket = io.connect();
             console.log('io.connect socket:', this.socket);
@@ -149,7 +152,10 @@ $(function(){
 
         render: function() {
             App.clearEnd();
-            var text = this.model.get('text');
+
+            $('.waitingToJoin').hide();
+
+            var text = this.model.get('hide');
             if (text) {
                 this.template = _.template($('#questionTemplateInput').html());
             } else {
@@ -258,6 +264,8 @@ $(function(){
         },
 
         render: function(data) {
+            $('.waitingToJoin').hide();
+
             console.log('app.endView render', this.model.toJSON());
             var data = this.model.toJSON();
             this.$el.html(this.template( { d:data } ));
