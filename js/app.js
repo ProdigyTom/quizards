@@ -79,14 +79,20 @@ $(function(){
             var that = this;
             var playerName = this.$input.val();
             $('.join').hide();
+
+            $('.waitingToJoin').show();
             $('.leave').show();
+            $('.playerScores').show();
+
 
             this.socket = app.socket = io.connect();
             console.log('io.connect socket:', this.socket);
 
             this.socket.on('players', function (data) {
                 console.log('players updated, data:', data);
-                $('.playerMsg').html(data.msg);
+                if (data.msg) {
+                    $('.playerMsg').html('hi, ' + data.msg + '!');
+                }
                 that.renderPlayers(data.players);
             });
 
@@ -151,7 +157,11 @@ $(function(){
 
         render: function() {
             App.clearEnd();
+
+            $('.waitingToJoin').hide();
+
             var text = this.model.get('text');
+
             if (text) {
                 this.template = _.template($('#questionTemplateInput').html());
             } else {
@@ -199,7 +209,7 @@ $(function(){
         answerClick: function(evt) {
             var answer = this.$el.find(evt.target).html();
             if (this.$el.find('.textAnswer').length !== 0) {
-                answer = this.$el.find('.textAnswer')[0].value;
+                answer = this.$el.find('.textAnswer')[0].value.toLowerCase();
             }
             var $el = this.$el.find(evt.target);
             console.log('--- answerClick: chose:', answer );
@@ -264,6 +274,8 @@ $(function(){
         },
 
         render: function(admin) {
+            $('.waitingToJoin').hide();
+
             console.log('app.endView render', this.model.toJSON());
             var data = this.model.toJSON();
             data.admin = admin;

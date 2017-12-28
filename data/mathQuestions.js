@@ -40,7 +40,7 @@ var mathQuestions = [{
 },{
     question: "What is the capital of Ontario?",
     text: true,
-    choices: ['Toronto']
+    choices: ['toronto']
 },
 ];
 
