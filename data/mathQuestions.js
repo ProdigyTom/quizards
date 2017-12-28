@@ -3,7 +3,7 @@
 // The correct answer must be the first choice (keepin' it simple).
 // Choices will be presented in random order.
 // points is optional, defaults to 10 if not specified.
-var mathQuestions = [/*{
+var mathQuestions = [{
     points: 10,
     question: "What is the capital of Canada?",
     choices: [
@@ -29,7 +29,7 @@ var mathQuestions = [/*{
         'Niels Bohr',
         'Linus Pauling'
     ]
-},*/{
+},{
     question: "Which company is the 9th fastest growing startup in canada?",
     choices: [
         'Prodigy',
