@@ -96,11 +96,16 @@ $(function(){
             });
 
             this.socket.on('end', function (data) {
+                var urlParam = window.location.href.split('?')[1];
+                var admin = false;
+                if (urlParam === 'admin=true') {
+                    var admin = true;
+                }
                 console.log('received end, data: ', data);
                 that.answerView.clear();
                 that.questionView.clear();
                 app.end.set(data);
-                that.endView.render();
+                that.endView.render(admin);
             });
 
             this.socket.emit('playerJoin', {
@@ -209,7 +214,7 @@ $(function(){
                 answer: answer,
                 question: this.model.get('question')
             });
-        }
+        },
     });
 
 
@@ -250,19 +255,28 @@ $(function(){
 
         template: _.template($('#endTemplate').html()),
 
+        events: {
+            "click .restart": "restart"
+        },
+
         initialize: function() {
             this.listenTo(this.model, 'change', this.render);
         },
 
-        render: function(data) {
+        render: function(admin) {
             console.log('app.endView render', this.model.toJSON());
             var data = this.model.toJSON();
+            data.admin = admin;
             this.$el.html(this.template( { d:data } ));
         },
 
         clear: function() {
             this.$el.html('');
         },
+
+        restart: function() {
+            app.socket.emit('restart');
+        }
     });
 
     var App = new app.AppView();

@@ -76,6 +76,11 @@ io.sockets.on('connection', function (socket) {
     socket.on('end', function (data) {
         console.log('SOCKET.IO game end');
     });
+
+    socket.on('restart', function () {
+        console.log('SOCKET.IO game restart');
+        emitNewQuestion();
+    });
 });
 
 function emitNewQuestion() {
@@ -99,10 +104,10 @@ function emitNewQuestion() {
             console.log('gameEnd');
             emitGameEnd();
 
-            setTimeout(function(){
+            /*setTimeout(function(){
                 // just wait!
                 console.log("waiting");
-            }, timeToAnswerMs);
+            }, timeToAnswerMs);*/
         } else {
             io.sockets.emit('question', q);
 
@@ -156,11 +161,10 @@ function emitPlayerUpdate(socket) {
 }
 
 function emitGameEnd() {
-    console.log('emitGameEnd');
     var playerData = players.getPlayerData();
     io.sockets.emit('end', playerData);
 
-    setTimeout(function(){
+    /*setTimeout(function(){
         emitNewQuestion();
-    }, timeToEnjoyEnd);
+    }, timeToEnjoyEnd);*/
 }

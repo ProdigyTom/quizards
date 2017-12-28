@@ -98,6 +98,10 @@
             <% _.each(d.players, function(player) { %>
                 <h3><span class="name"><%- player.name %></span> <span class="points"><%- player.points %> pts</span></h3>
             <% }); %>
+            <br />
+            <% if (d.admin) { %>
+                <button class="restart">Restart Quiz</button>
+            <% } %>
         </script>
 
         <script type="text/template" id="answerTemplate">

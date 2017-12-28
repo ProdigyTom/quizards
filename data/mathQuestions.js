@@ -12,7 +12,7 @@ var mathQuestions = [{
         'Toronto',
         'London'
     ]
-},{
+}/*,{
     points: 20,
     question: "Who came up with the modern periodic table?",
     choices: [
@@ -41,7 +41,7 @@ var mathQuestions = [{
     question: "What is the capital of Ontario?",
     text: true,
     choices: ['Toronto']
-},
+},*/
 ];
 
 if (typeof module == 'object') {
