@@ -204,7 +204,7 @@ $(function(){
         answerClick: function(evt) {
             var answer = this.$el.find(evt.target).html();
             if (this.$el.find('.textAnswer').length !== 0) {
-                answer = this.$el.find('.textAnswer')[0].value;
+                answer = this.$el.find('.textAnswer')[0].value.toLowerCase();
             }
             var $el = this.$el.find(evt.target);
             console.log('--- answerClick: chose:', answer );
