@@ -1,0 +1,77 @@
+body {
+    background-color: #DDD;
+    margin-top: 75px;
+}
+
+.main {
+    min-height: 450px;
+}
+
+.whiteBox {
+    background-color: #FFF;
+    padding: 10px 15px;
+    margin: 10px 0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    min-width: 150px;
+}
+.header button {
+    margin-left:10px;
+}
+.leave {
+    display:none;
+}
+.players,
+.playerMsg {
+    font-size: 17.5px;
+}
+.players a {
+    font-size: 12px;
+}
+.players li {
+    padding: 3px 1px;
+}
+.choice {
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.fakeHeader {
+    position: fixed;
+    top: 0;
+}
+
+.fakeFooter {
+    margin-top: 0px;
+}
+
+.logo {
+    max-width: 85%;
+    margin-bottom: 50px;
+}
+
+.answer {
+    background-color: #3498DB;
+    border-color: #3498DB;
+    max-height: 380px;
+    max-width: 500px;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.myChoice {
+    background-color: #27AE60;
+    border-color: #27AE60;
+}
+
+.points {
+    width: 50%;
+    text-align: center;
+}
+
+.name {
+    text-align: left;
+    margin-right: 150px;
+}
