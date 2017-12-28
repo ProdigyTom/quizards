@@ -155,7 +155,8 @@ $(function(){
 
             $('.waitingToJoin').hide();
 
-            var text = this.model.get('hide');
+            var text = this.model.get('text');
+
             if (text) {
                 this.template = _.template($('#questionTemplateInput').html());
             } else {

@@ -81,6 +81,16 @@ body {
     padding: 11px 22px;
 }
 
+.textAnswerWapper {
+    padding: 11px 11px;
+}
+
+.textAnswer {
+    width: 60%;
+    height: 20px;
+}
+
+
 .myChoice {
     background-color: #27AE60;
     border-color: #27AE60;
