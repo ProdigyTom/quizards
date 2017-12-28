@@ -10,13 +10,10 @@
         <link href="css/trivia.css" rel="stylesheet">
     </head>
     <body>
-        <img src="/public/header.png" class="fakeHeader" />
         <div class="container-fluid main">
             <div class="header row-fluid">
                 <div class="span8">
-                    <div class="topBar">
-                        <img src="/public/quizardsLogoWhite.png" alt="Quizards Logo" class="logo" />
-                    </div>
+                    <img src="/public/quizardsLogoWhite.png" alt="Quizards Logo" class="logo" />
                 </div>
                 <div class="span4">
                     <h2 class="form-inline join pull-right">
@@ -36,7 +33,6 @@
                     <div id="endContainer"></div>
                 </div>
                 <div class="span4">
-                    <img src="/public/thumbs-up-wink.png" alt="Ed" class="ed pull-right" />
                     <div class="players pull-right whiteBox">
                         <ol class="unstyled">
                             <li></li>
@@ -45,7 +41,6 @@
                 </div>
             </div>
         </div>
-        <img src="/public/footer.png" class="fakeFooter" />
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js" ></script>
@@ -74,7 +69,7 @@
                 <%- d.question %>
             </h3>
             <% _.each(d.choices, function(choice) { %>
-                <span class='answer'><%- choice %></span>
+                <button class='answer btn-styled'><%- choice %></button>
             <% }); %>
         </script>
 
@@ -89,7 +84,7 @@
                 <%- d.question %>
             </h3>
             <input type="text" class='textAnswer' />
-            <span class='answer'>Submit</span>
+            <button class='answer btn-styled'>Submit</button>
         </script>
 
         <script type="text/template" id="endTemplate">

@@ -1,6 +1,6 @@
 body {
-    background-color: #DDD;
-    margin-top: 75px;
+    background-color: #EEE;
+    margin-top: 20px;
 }
 
 .main {
@@ -37,34 +37,22 @@ body {
     margin-bottom: 20px;
 }
 
-.fakeHeader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.fakeFooter {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin-top: 0px;
-}
-
 .logo {
-    max-width: 85%;
-    margin-bottom: 50px;
+    max-width: 50%;
+    margin-bottom: 20px;
 }
 
-.answer {
+
+.btn-styled {
     background-color: #3498DB;
     border-color: #3498DB;
     max-height: 380px;
+    min-width: 350px;
     max-width: 500px;
     border-radius: 4px;
     margin: 10px;
     padding: 10px;
+    color: #FFF;
 
     display: flex;
     align-items: center;
