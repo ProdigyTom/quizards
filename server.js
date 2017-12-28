@@ -147,7 +147,7 @@ function emitPlayerUpdate(socket) {
     if (socket) {
         socket.broadcast.emit('players', playerData); // emit to all but socket
 
-        playerData.msg = 'Welcome, '+ players.getPlayerName(socket.id);
+        playerData.msg = players.getPlayerName(socket.id);
         socket.emit('players', playerData); // emit only to socket
 
     } else {

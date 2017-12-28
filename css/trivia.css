@@ -22,9 +22,22 @@ body {
 .leave {
     display:none;
 }
-.players,
+
 .playerMsg {
+    float: right;
+    font-size: 22px;
+    overflow: hidden;
+    line-height: 42px;
+    font-weight: 600;
+    color: #444;
+    max-width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.players {
     font-size: 17.5px;
+    overflow: hidden;
 }
 .players a {
     font-size: 12px;
@@ -38,10 +51,12 @@ body {
 }
 
 .logo {
-    max-width: 50%;
-    margin-bottom: 20px;
+    width: 186px;
 }
 
+.playerMesg {
+
+}
 
 .btn-styled {
     background-color: #3498DB;

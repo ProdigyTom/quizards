@@ -86,7 +86,7 @@ $(function(){
 
             this.socket.on('players', function (data) {
                 console.log('players updated, data:', data);
-                $('.playerMsg').html(data.msg);
+                $('.playerMsg').html('hi, ' + data.msg + '!');
                 that.renderPlayers(data.players);
             });
 
