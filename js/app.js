@@ -80,13 +80,16 @@ $(function(){
             var playerName = this.$input.val();
             $('.join').hide();
             $('.leave').show();
+            $('.playerScores').show();
 
             this.socket = app.socket = io.connect();
             console.log('io.connect socket:', this.socket);
 
             this.socket.on('players', function (data) {
                 console.log('players updated, data:', data);
-                $('.playerMsg').html('hi, ' + data.msg + '!');
+                if (data.msg) {
+                    $('.playerMsg').html('hi, ' + data.msg + '!');
+                }
                 that.renderPlayers(data.players);
             });
 

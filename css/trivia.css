@@ -86,6 +86,10 @@ body {
     border-color: #27AE60;
 }
 
+.playerScores {
+    display: none;
+}
+
 .points {
     width: 50%;
     text-align: center;

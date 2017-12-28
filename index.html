@@ -31,12 +31,16 @@
             </div>
             <div class="row-fluid">
                 <div class="span8">
-                    <div id="questionContainer"></div>
+                    <div id="questionContainer">
+                    </div>
                     <div id="answerContainer"></div>
                     <div id="endContainer"></div>
                 </div>
+            </div>
+            <div class="row-fluid playerScores">
+                <div class="span4"></div>
                 <div class="span4">
-                    <div class="players pull-right whiteBox">
+                    <div class="players whiteBox">
                         <ol class="unstyled">
                             <li></li>
                         </ol>
@@ -92,10 +96,6 @@
 
         <script type="text/template" id="endTemplate">
             <h1>Quiz Finished!</h1>
-            <h3>Results:</h3>
-            <% _.each(d.players, function(player) { %>
-                <h3><span class="name"><%- player.name %></span> <span class="points"><%- player.points %> pts</span></h3>
-            <% }); %>
         </script>
 
         <script type="text/template" id="answerTemplate">
