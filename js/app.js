@@ -247,18 +247,19 @@ $(function(){
 
         render: function() {
             App.clearEnd();
+            this.$el.show();
             console.log('app.AnswerView render', this.model.toJSON()    );
             var data = this.model.toJSON();
             data.myChoice = $('#questionContainer .myChoice').html() || '';
             if (data.correctAnswer) {
                 this.$el.html(this.template( { d:data } ));
             } else {
-                this.$el.html('');
+                this.$el.html('').hide();
             }
         },
 
         clear: function() {
-            this.$el.html('');
+            this.$el.html('').hide();
         },
     });
 

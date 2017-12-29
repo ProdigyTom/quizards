@@ -110,24 +110,26 @@
         </script>
 
         <script type="text/template" id="answerTemplate">
-            <h4>Correct Answer: <%- d.correctAnswer %><br>
             <% if (d.winner) { %>
-                <br>YOU WON!! You were first to answer correctly.
+                <img class="victoryEd" src="/public/thumbs-up-wink.png" alt="ed" class="ed" />
+                <br><div style="margin-top:10px;">YOU WON!! You were first to answer correctly.</div>
 
             <% } else if (d.correctAnswer == d.myChoice) { %>
-                <br>Sorry. You were not the first to answer.
+                <br>You got it right, but you weren't fast enough!
 
             <% } else if (d.correctAnswer != d.myChoice) { %>
                 <br>Sorry. You did not guess correctly.
+                <br>Correct Answer: <%- d.correctAnswer %>
 
             <% } %>
             <% if (!d.winner && d.winnerName) { %>
-                <br>The winner was <%- d.winnerName %>
+            <br>
+                <br>The winner was... <%- d.winnerName %>!
 
             <% } else if (!d.winner) { %>
-                <br>Nobody won that one :
+            <br><br>
+                <br>Nobody got that one right...
             <% } %>
-            </h4>
         </script>
 
     </body>
