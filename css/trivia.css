@@ -62,17 +62,14 @@ body {
     background-color: #3498DB;
     border-color: #3498DB;
     max-height: 380px;
-    min-width: 350px;
+    width: 98%;
     max-width: 500px;
     border-radius: 4px;
     margin: 10px;
-    padding: 10px;
     color: #FFF;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
@@ -112,6 +109,10 @@ body {
 .name {
     text-align: left;
     margin-right: 150px;
+}
+
+.admin {
+    display: none;
 }
 
 .topBar {

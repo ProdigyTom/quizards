@@ -25,7 +25,8 @@ $(function(){
         events:{
             "click .leave": "leaveBtnClick",
             "keypress .join input"  : "joinOnEnter",
-            "click .join button": "joinBtnClick"
+            "click .join button": "joinBtnClick",
+            "click .restart": "restartQuiz"
         },
 
         initialize: function() {
@@ -34,6 +35,11 @@ $(function(){
             this.questionView = new app.QuestionView();
             this.answerView = new app.AnswerView();
             this.endView = new app.EndView();
+
+            var urlParam = window.location.href.split('?')[1];
+            if (urlParam === 'admin=true') {
+                $(".admin").show();
+            }
         },
 
         render: function() {
@@ -102,21 +108,20 @@ $(function(){
             });
 
             this.socket.on('end', function (data) {
-                var urlParam = window.location.href.split('?')[1];
-                var admin = false;
-                if (urlParam === 'admin=true') {
-                    var admin = true;
-                }
                 console.log('received end, data: ', data);
                 that.answerView.clear();
                 that.questionView.clear();
                 app.end.set(data);
-                that.endView.render(admin);
+                that.endView.render();
             });
 
             this.socket.emit('playerJoin', {
                 playerName: playerName
             });
+        },
+
+        restartQuiz: function() {
+            app.socket.emit('restart');
         },
 
         clearEnd: function() {
@@ -273,21 +278,16 @@ $(function(){
             this.listenTo(this.model, 'change', this.render);
         },
 
-        render: function(admin) {
+        render: function() {
             $('.waitingToJoin').hide();
 
             console.log('app.endView render', this.model.toJSON());
             var data = this.model.toJSON();
-            data.admin = admin;
             this.$el.html(this.template( { d:data } ));
         },
 
         clear: function() {
             this.$el.html('');
-        },
-
-        restart: function() {
-            app.socket.emit('restart');
         }
     });
 
