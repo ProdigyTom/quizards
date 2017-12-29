@@ -47,10 +47,10 @@ io.sockets.on('connection', function (socket) {
         });
         console.log('SOCKET.IO player added: '+ p.name + ' from '+ ip + ' for socket '+ socket.id);
         emitPlayerUpdate(socket);
-        if (players.getPlayerCount() == 1) {
-            // start game!
-            emitNewQuestion();
-        }
+        // if (players.getPlayerCount() == 1) {
+        //     // start game!
+        //     emitNewQuestion();
+        // }
     });
     socket.on('disconnect', function() {
         var pname = players.getPlayerName(socket.id);
