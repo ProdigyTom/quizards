@@ -13,7 +13,34 @@ var mathQuestions = [{
         'London'
     ]
 },{
-    points: 20,
+    points: 5,
+    question: "What is 2 + 3?",
+    choices: [
+        '5',
+        '6',
+        '-5',
+        'elephant'
+    ]
+},{
+    points: 10,
+    question: "Who invaded Spain in the 8th century AD?",
+    choices: [
+        'Moors',
+        'The Moops',
+        'Julius Caeser',
+        'Orange Julius'
+    ]
+},{
+    points: 10,
+    question: "Which brothers hold the NHL record for most career points?",
+    choices: [
+        'The Gretzkys',
+        'The Sittlers',
+        'The Domis',
+        'The Espositos'
+    ]
+},{
+    points: 10,
     question: "Who came up with the modern periodic table?",
     choices: [
         'Dmitri Mendeleev',
